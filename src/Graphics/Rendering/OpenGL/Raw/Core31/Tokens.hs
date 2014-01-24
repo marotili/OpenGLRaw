@@ -17,6 +17,9 @@ module Graphics.Rendering.OpenGL.Raw.Core31.Tokens where
 
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
 
+gl_SHADER_STORAGE_BLOCK :: GLenum
+gl_SHADER_STORAGE_BLOCK = 0x92E6
+
 gl_ACTIVE_ATTRIBUTES :: GLenum
 gl_ACTIVE_ATTRIBUTES = 0x8B89
 

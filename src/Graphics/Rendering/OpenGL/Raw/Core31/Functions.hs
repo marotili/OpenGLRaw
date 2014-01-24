@@ -299,7 +299,8 @@ module Graphics.Rendering.OpenGL.Raw.Core31.Functions (
    glVertexAttribI4usv,
    glVertexAttribIPointer,
    glVertexAttribPointer,
-   glViewport
+   glViewport,
+   glGetProgramResourceIndex
 ) where
 
 import Foreign.Ptr
@@ -312,6 +313,7 @@ import Graphics.Rendering.OpenGL.Raw.Core31.Types
 extensionNameString :: String
 extensionNameString = "OpenGL 3.1"
 
+EXTENSION_ENTRY(glGetProgramResourceIndex, GLuint -> GLenum -> Ptr GLchar -> IO GLuint)
 EXTENSION_ENTRY(glActiveTexture,GLenum -> IO ())
 EXTENSION_ENTRY(glAttachShader,GLuint -> GLuint -> IO ())
 EXTENSION_ENTRY(glBeginConditionalRender,GLuint -> GLenum -> IO ())

@@ -1,5 +1,5 @@
 name: OpenGLRaw
-version: 1.4.0.0
+version: 1.4.0.2
 license: BSD3
 license-file: LICENSE
 maintainer: Sven Panne <svenpanne@gmail.com>, Jason Dagit <dagitj@gmail.com>
@@ -235,12 +235,12 @@ library
       Graphics.Rendering.OpenGL.Raw.NV.VertexProgram2Option,
       Graphics.Rendering.OpenGL.Raw.NV.VertexProgram3,
       Graphics.Rendering.OpenGL.Raw.NV.VertexProgram4,
-      Graphics.Rendering.OpenGL.Raw.Types
+      Graphics.Rendering.OpenGL.Raw.Types,
+      Graphics.Rendering.OpenGL.Raw.Core31.Tokens
    other-modules:
       Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Functions,
       Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Tokens,
       Graphics.Rendering.OpenGL.Raw.Core31.Functions,
-      Graphics.Rendering.OpenGL.Raw.Core31.Tokens,
       Graphics.Rendering.OpenGL.Raw.Extensions
    c-sources:
       cbits/HsOpenGLRaw.c
