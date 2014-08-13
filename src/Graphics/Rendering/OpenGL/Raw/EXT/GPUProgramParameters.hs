@@ -1,7 +1,7 @@
 {-# LANGUAGE ForeignFunctionInterface, CPP #-}
 --------------------------------------------------------------------------------
 -- |
--- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.GpuProgramParameters
+-- Module      :  Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters
 -- Copyright   :  (c) Sven Panne 2013
 -- License     :  BSD3
 --
@@ -15,7 +15,7 @@
 --
 --------------------------------------------------------------------------------
 
-module Graphics.Rendering.OpenGL.Raw.EXT.GpuProgramParameters (
+module Graphics.Rendering.OpenGL.Raw.EXT.GPUProgramParameters (
    -- * Functions
    glProgramEnvParameters4fv,
    glProgramLocalParameters4fv
@@ -31,5 +31,5 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_EXT_program_parameters"
 
-EXTENSION_ENTRY(glProgramEnvParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
-EXTENSION_ENTRY(glProgramLocalParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glProgramEnvParameters4fv,ptr_glProgramEnvParameters4fv,"glProgramEnvParameters4fv",glProgramEnvParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glProgramLocalParameters4fv,ptr_glProgramLocalParameters4fv,"glProgramLocalParameters4fv",glProgramLocalParameters4fv,GLenum -> GLuint -> GLsizei -> Ptr GLfloat -> IO ())

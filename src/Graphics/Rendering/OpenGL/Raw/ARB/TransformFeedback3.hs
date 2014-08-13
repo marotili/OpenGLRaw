@@ -29,7 +29,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TransformFeedback3 (
 
 import Foreign.C.Types
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.ARB.GpuShader5
+import Graphics.Rendering.OpenGL.Raw.ARB.GPUShader5
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
 import Graphics.Rendering.OpenGL.Raw.Extensions
 
@@ -40,10 +40,10 @@ import Graphics.Rendering.OpenGL.Raw.Extensions
 extensionNameString :: String
 extensionNameString = "GL_ARB_transform_feedback3"
 
-EXTENSION_ENTRY(glDrawTransformFeedbackStream, GLenum -> GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(glBeginQueryIndexed, GLenum -> GLuint -> GLuint -> IO ())
-EXTENSION_ENTRY(glEndQueryIndexed, GLenum -> GLuint -> IO ())
-EXTENSION_ENTRY(glGetQueryIndexediv, GLenum -> GLuint -> GLenum -> Ptr GLint -> IO ())
+EXTENSION_ENTRY(dyn_glDrawTransformFeedbackStream,ptr_glDrawTransformFeedbackStream,"glDrawTransformFeedbackStream",glDrawTransformFeedbackStream, GLenum -> GLuint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glBeginQueryIndexed,ptr_glBeginQueryIndexed,"glBeginQueryIndexed",glBeginQueryIndexed, GLenum -> GLuint -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glEndQueryIndexed,ptr_glEndQueryIndexed,"glEndQueryIndexed",glEndQueryIndexed, GLenum -> GLuint -> IO ())
+EXTENSION_ENTRY(dyn_glGetQueryIndexediv,ptr_glGetQueryIndexediv,"glGetQueryIndexediv",glGetQueryIndexediv, GLenum -> GLuint -> GLenum -> Ptr GLint -> IO ())
 
 gl_MAX_TRANSFORM_FEEDBACK_BUFFERS :: GLenum
 gl_MAX_TRANSFORM_FEEDBACK_BUFFERS = 0x8E70

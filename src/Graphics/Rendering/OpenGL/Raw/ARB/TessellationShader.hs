@@ -31,6 +31,7 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader (
    gl_TESS_GEN_POINT_MODE,
    gl_TRIANGLES,
    gl_ISOLINES,
+   gl_QUADS,
    gl_EQUAL,
    gl_FRACTIONAL_ODD,
    gl_FRACTIONAL_EVEN,
@@ -60,17 +61,18 @@ module Graphics.Rendering.OpenGL.Raw.ARB.TessellationShader (
 
 import Foreign.C.Types
 import Foreign.Ptr
-import Graphics.Rendering.OpenGL.Raw.Extensions
+import Graphics.Rendering.OpenGL.Raw.ARB.Compatibility.Tokens
 import Graphics.Rendering.OpenGL.Raw.Core31.Tokens
 import Graphics.Rendering.OpenGL.Raw.Core31.Types
+import Graphics.Rendering.OpenGL.Raw.Extensions
 
 #include "HsOpenGLRaw.h"
 
 extensionNameString :: String
 extensionNameString = "GL_ARB_ARB_tessellation_shader"
 
-EXTENSION_ENTRY(glPatchParameteri,GLenum -> GLint -> IO ())
-EXTENSION_ENTRY(glPatchParameterfv,GLenum -> Ptr GLfloat -> IO ())
+EXTENSION_ENTRY(dyn_glPatchParameteri,ptr_glPatchParameteri,"glPatchParameteri",glPatchParameteri,GLenum -> GLint -> IO ())
+EXTENSION_ENTRY(dyn_glPatchParameterfv,ptr_glPatchParameterfv,"glPatchParameterfv",glPatchParameterfv,GLenum -> Ptr GLfloat -> IO ())
 
 gl_PATCHES :: GLenum
 gl_PATCHES = 0x000E

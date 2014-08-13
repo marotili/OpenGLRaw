@@ -15,15 +15,17 @@
 #ifndef HSOPENGLRAW_H
 #define HSOPENGLRAW_H
 
+#define HASH #
+
 /* NOTE: The macro must immediately start with the foreign declaration,
    otherwise the magic mangler (hack_foreign) in the Hugs build system
    doesn't recognize it. */
-#define EXTENSION_ENTRY(_entry,_ty) \
-foreign import CALLCONV unsafe "dynamic" dyn_/**/_entry :: Graphics.Rendering.OpenGL.Raw.Extensions.Invoker (_ty) ; \
+#define EXTENSION_ENTRY(_dyn_entry,_ptr_entry,_str_entry,_entry,_ty) \
+foreign import CALLCONV unsafe "dynamic" _dyn_entry :: Graphics.Rendering.OpenGL.Raw.Extensions.Invoker (_ty) ; \
 _entry :: (_ty) ; \
-_entry = dyn_/**/_entry ptr_/**/_entry ; \
-ptr_/**/_entry :: FunPtr a ; \
-ptr_/**/_entry = unsafePerformIO (Graphics.Rendering.OpenGL.Raw.Extensions.getExtensionEntry extensionNameString "_entry") ; \
-{-# NOINLINE ptr_/**/_entry #-}
+_entry = _dyn_entry _ptr_entry ; \
+_ptr_entry :: FunPtr a ; \
+_ptr_entry = unsafePerformIO (Graphics.Rendering.OpenGL.Raw.Extensions.getExtensionEntry extensionNameString _str_entry) ; \
+{-HASH NOINLINE _ptr_entry HASH-}
 
 #endif
