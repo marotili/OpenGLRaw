@@ -270,7 +270,7 @@ library
    hs-Source-Dirs: src
    include-dirs: include
    build-depends: base >= 3 && < 5
-   ghc-options: -Wall -O2
+   ghc-options: -Wall -fprof-auto
    if impl(ghc)
       -- these require 6.8, but that's pretty conservative these days
       extensions: StandaloneDeriving, DeriveDataTypeable
